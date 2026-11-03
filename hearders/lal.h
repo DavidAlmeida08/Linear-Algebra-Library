@@ -39,9 +39,13 @@ typedef struct {
 // Utils
 void* safe_allocation(Arena* arena, u64 size, b32 non_zero);
 
-// Creation
+// Basic
 Matrix* create_matrix(Arena* arena, u32 rows, u32 cols);
 void print_matrix(Matrix* matrix);
 void fill_matrix(Matrix* matrix, f64* data, u64 data_size);
+
+// Operations
+void transpose_matrix(Matrix* matrix);
+
 
 #endif // LAL_H
