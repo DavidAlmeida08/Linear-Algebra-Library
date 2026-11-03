@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 
 // Ints
 typedef int8_t i8;
@@ -23,6 +24,10 @@ typedef double f64;
 // Boolean
 typedef i32 b32;
 
+typedef struct Arena Arena;
+
+#include "arena.h"
+
 // Matrix
 typedef struct {
     u32 rows;
@@ -31,5 +36,12 @@ typedef struct {
     f64* data;
 } Matrix;
 
+// Utils
+void* safe_allocation(Arena* arena, u64 size, b32 non_zero);
+
+// Creation
+Matrix* create_matrix(Arena* arena, u32 rows, u32 cols);
+void print_matrix(Matrix* matrix);
+void fill_matrix(Matrix* matrix, f64* data, u64 data_size);
 
 #endif // LAL_H
