@@ -29,3 +29,5 @@ void fill_matrix(Matrix* matrix, f64* data, u64 data_size) {
     }
     memcpy(matrix->data, data, data_size);
 }
+
+

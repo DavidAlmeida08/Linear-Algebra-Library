@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include "arena.h"
+
 
 // Ints
 typedef int8_t i8;
@@ -26,8 +28,6 @@ typedef i32 b32;
 
 typedef struct Arena Arena;
 
-#include "arena.h"
-
 // Matrix
 typedef struct {
     u32 rows;
@@ -46,6 +46,8 @@ void fill_matrix(Matrix* matrix, f64* data, u64 data_size);
 
 // Operations
 void transpose_matrix(Matrix* matrix);
+Matrix* multiply_matrices(Arena* arena, Matrix* A, Matrix* B);
+Matrix* add_matrices(Arena* arena, Matrix* A, Matrix* B);
 
 
 #endif // LAL_H
